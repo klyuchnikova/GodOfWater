@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<langs>
+    <lang key="en">
+        <string key="Play">Play</string>
+        <string key="Exit">Exit</string>
+        <string key="Again">Again</string>
+        <string key="Shop">Shop</string>
+        <string key="Settings">Settings</string>
+        <string key="Classic">Classic</string>
+        <string key="Lily">Lily</string>
+        <string key ="End">End</string>
+
+
+    </lang>
+    <lang key="ru">
+        <string key="Play">Играть</string>
+        <string key="Exit">Выход</string>
+        <string key="Again">Повторить</string>
+        <string key="Shop">Магазин</string>
+        <string key="Settings">Настройки</string>
+        <string key="Classic">Классический</string>
+        <string key="Lily">Лилия</string>
+        <string key ="End">Конец</string>
+
+    </lang>
+</langs>

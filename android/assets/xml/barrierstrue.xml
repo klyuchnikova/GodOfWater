@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<barriers>
+    <barrier files="l1r" />
+    <barrier files="l2r" />
+    <barrier files="l1o" />
+    <barrier files="l2o" />
+    <barrier files="l1s" />
+    <barrier files="l2s" />
+
+    <barrier files="b1r" />
+    <barrier files="b2r" />
+    <barrier files="b1o" />
+    <barrier files="b2o" />
+    <barrier files="b1s" />
+    <barrier files="b2s" />
+</barriers>

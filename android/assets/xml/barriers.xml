@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<barriers>
+    <barrier files="l1r" />
+    <barrier files="l2r" />
+    <barrier files="l1o" />
+    <barrier files="l2o" />
+</barriers>

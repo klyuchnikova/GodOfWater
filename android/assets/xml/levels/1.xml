@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<level>
+    <positions>
+        <position barr="l2" x="50" y="2730" />
+        <position barr="l1" x="100" y="5770" />
+        <position barr="l2" x="900" y="7540" />
+        <position barr="l1" x="300" y="5020" />
+        <position barr="l2" x="800" y="8540" />
+        <position barr="l2" x="500" y="3020" />
+        <position barr="l2" x="600" y="9540" />
+
+    </positions>
+</level>
