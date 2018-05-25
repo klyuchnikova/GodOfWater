@@ -58,7 +58,7 @@ public class Level extends Group {
             for (int j = 0; j < arr.size; j++) {
                     br =new Barrier(namebr,Float.parseFloat(arr.get(j).get(0)),Float.parseFloat(arr.get(j).get(1)),game);
                     br.setLevel(this);
-                    br.setXY(Float.parseFloat(arr.get(j).get(0)),Float.parseFloat(arr.get(j).get(1)));
+                    //br.setXY(Float.parseFloat(arr.get(j).get(0)),Float.parseFloat(arr.get(j).get(1)));
                     barriers.add(br);
                     this.addActor(barriers.get(j));
                 }

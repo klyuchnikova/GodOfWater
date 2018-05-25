@@ -5,27 +5,31 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
-public class ForwardWaterAtor extends Actor {
-    Animation anim = GifDecoder.loadGIFAnimation(Animation.PlayMode.NORMAL,Gdx.files.internal("my-gif-anumation.gif").read());
+import net.dermetfan.gdx.graphics.g2d.AnimatedSprite;
 
-    private Texture river,ocean,stones;
-    public int map;
-    private String [] maps;
+public class ForwardWaterAtor extends Actor {
+    AnimatedSprite anim = new AnimatedSprite(GifDecoder.loadGIFAnimation(Animation.PlayMode.LOOP_PINGPONG,Gdx.files.internal("images/background/water4.gif").read()));
+
+    float elapsed;
     public double speed;
-    private Sprite one,two,three;
-    private Sprite[] backgroundSprites;
+
+    public ForwardWaterAtor(){
+
+        anim.setBounds(0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        //anim.rotate90(true);
+
+    }
 
     @Override
     public void draw(Batch batch, float alpha) {
-
-        backgroundSprites[map].draw(batch,100);
-        //shadowSprite.draw(batch,n);
+        anim.draw(batch,0.4f);
     }
 
     @Override
     public void act(float delta) {
-        super.act(delta);
+        elapsed += delta;
     }
 }

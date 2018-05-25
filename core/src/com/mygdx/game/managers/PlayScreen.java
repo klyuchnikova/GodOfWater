@@ -84,6 +84,10 @@ public class PlayScreen  implements Screen {
         game = gam;
         touchPos = new Vector3();
 
+        game.play_music.setVolume(0.4f);
+        game.play_music.play();
+        game.play_music.setLooping(true);
+
         stage = new PlayStage(new ScreenViewport());
         batch = (SpriteBatch) stage.getBatch();
 
@@ -91,6 +95,7 @@ public class PlayScreen  implements Screen {
         ship.setLevel(current_level);
 
         stage.addActor(game.water_drawer);
+        stage.addActor(game.front_water_drawer);
         stage.addActor(current_level);
         stage.addActor(ship);
 
@@ -163,9 +168,12 @@ public class PlayScreen  implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 
+        //game.play_music.play();
+
         ship.act(delta);
         current_level.act(delta);
         game.water_drawer.act(delta);
+        game.front_water_drawer.act(delta);
         stage.act(delta);
         stage.draw();
 
@@ -183,6 +191,7 @@ public class PlayScreen  implements Screen {
         }
 
         if (isGameOver()) {
+            game.play_music.setVolume(0.1f);
             table.setVisible(true);
             table2.setVisible(true);
         } else {
@@ -226,7 +235,7 @@ public class PlayScreen  implements Screen {
     @Override
     public void dispose() {
         stage.dispose();
-        game.dispose();
+        //game.dispose();
     }
     public boolean isGameOver(){
         return game.loose;

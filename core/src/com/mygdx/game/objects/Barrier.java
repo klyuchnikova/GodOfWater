@@ -86,7 +86,7 @@ public class Barrier extends Actor {
         Vector2 center = new Vector2();
         center.x=img.getX() + (img.getWidth()/2);
         center.y=img.getY() + (img.getHeight()/2);
-        brCircle = new Circle(center, (img.getHeight()/2));
+        brCircle = new Circle(center, (img.getWidth()/2));
 
 
     }
@@ -99,7 +99,6 @@ public class Barrier extends Actor {
         img.setX(x);
         img.setY(y+Gdx.graphics.getHeight());
     }
-
 
 
     @Override

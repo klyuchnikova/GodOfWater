@@ -9,6 +9,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
@@ -886,9 +887,9 @@ public class GifDecoder {
                 for(v = 0; v < vzones; v++) {
                     int frameID = v + h * vzones;
                     if(frameID < nrFrames) {
-                        tr = new TextureRegion(texture, h * width, v * height, width, height);
+                        tr = new TextureRegion(texture, h * width, v * height,width, height);
                         texReg.add(tr);
-                    }
+                }
                 }
             }
 

@@ -70,22 +70,4 @@ public class XMLparse {
         return barrierPos;
     }
 
-
-    public Map<String,Barrier> XMLparseBarriers() {
-        XmlReader.Element root = new XmlReader().parse(Gdx.files.internal("xml/barriers.xml"));
-        Array<XmlReader.Element> xml_stars = root.getChildrenByName("barrier");
-
-        //int i =0;
-
-        for (XmlReader.Element el : xml_stars) {
-            //i+=1;
-            strbarr = el.getAttribute("files");
-            Barrier barr = new Barrier(
-                    strbarr,0,0,game
-            );
-            barriers.put(strbarr,barr);
-        }
-
-        return this.barriers;
-    }
 }

@@ -3,6 +3,7 @@ package com.mygdx.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.mygdx.game.managers.MainMenuScreen;
 import com.mygdx.game.objects.BackgroundMenuActor;
 import com.mygdx.game.objects.BackgroundWaterActor;
+import com.mygdx.game.objects.ForwardWaterAtor;
 import com.mygdx.game.objects.XMLparse;
 
 import java.util.HashMap;
@@ -23,8 +25,11 @@ public class MyGdxGame extends Game {
 	public BitmapFont font, levels;
 	private static final String FONT_CHARACTERS = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789][_!$%#@|\\/?-+=()*&.;,{}\"´`'<>";
 
+	public Music play_music;
 	public BackgroundMenuActor menu_drawer;
 	public BackgroundWaterActor water_drawer;
+	public ForwardWaterAtor front_water_drawer;
+
 	public XMLparse xmlParse;
 
 	public HashMap<String, String> langStr = new HashMap<String, String>();
@@ -50,11 +55,18 @@ public class MyGdxGame extends Game {
 		levels.setColor(Color.WHITE);
 		generator.dispose();
 
+		play_music = Gdx.audio.newMusic(Gdx.files.internal("MusicTailand.mp3"));
+		play_music.setVolume(0.5f);
+		//play_music.play();
+
 		menu_drawer = new BackgroundMenuActor();
 		menu_drawer.setPosition(0,0);
 
 		water_drawer = new BackgroundWaterActor();
 		water_drawer.setPosition(0,0);
+
+		front_water_drawer = new ForwardWaterAtor();
+        front_water_drawer.setPosition(0,0);
 
 		xmlParse = new XMLparse(this);
 		String locale = java.util.Locale.getDefault().toString().split("_")[0];
@@ -68,6 +80,8 @@ public class MyGdxGame extends Game {
 	
 	@Override
 	public void dispose () {
-
+		play_music.dispose();
 	}
+
+
 }
